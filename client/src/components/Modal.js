@@ -23,19 +23,15 @@ export default function Modal(props) {
       photo: photo.value || 'N/A'
     }
 
-    console.log(data)
-
     if(e.target.firstName.id === 'firstName') {
       dispatch(addContact(data))
     } else if(e.target.firstName.id !== 'firstName') {
       dispatch(editContactInfo(data, id))
-      alert('yes')
     }
   
   }
   const onChange = (e) => {
     const { name, value } = e.target
-    console.log(name)
 
     switch (name) {
       case 'firstName':
@@ -81,6 +77,9 @@ export default function Modal(props) {
               Save Change
               </button>
             </form>
+          </div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
